@@ -1,5 +1,7 @@
 package org.kodluyoruz;
 
+import org.kodluyoruz.Hardware;
+
 /**
  * Bu sınıf bir RAM'i temsil eder.
  * TODO Bu sınıfı Hardware sınıfının alt sınıfı haline getirin.
@@ -10,8 +12,49 @@ package org.kodluyoruz;
  *
  * TODO Bu 2 özellik ve bunların metotları için gereken kodları bu sınıfın içine yazın
  */
-public class RAM
+public class RAM extends Hardware
 {
+
+    private int memory;
+
+    private int frequency;
+
+    public RAM(){
+        super("",0.0,0);
+        this.memory=memory;
+        this.frequency=frequency;
+    }
+
+    public int getMemory() {
+        return memory;
+    }
+
+    public void setMemory(int memory) {
+        this.memory = memory;
+    }
+
+    public int getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(int frequency) {
+        this.frequency = frequency;
+    }
+
+    public double fiyat(int memory) {
+        if(memory>16){
+           price +=memory/4*100;
+        }
+        return price;
+    }
+
+    public double fiyat(int frequency) {
+        if(frequency>16){
+            price +=frequency/4*100;
+        }
+        return price;
+    }
+
 
     /*
      * Eğer RAM'in hafızası 16 GB'tan fazlaysa, her 4 GB için fiyatı 100 TL artar.
